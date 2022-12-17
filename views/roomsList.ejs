@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>examen</title>
+
+    <!--  <link rel="stylesheet" href="/css/styleConnection.css"/>  -->
+</head>
+<body>
+    <div id="container">
+        <h1>Liste des pièces de l'appartement</h1>
+        <% totalsurface = 0 %> 
+        <% for(var i = 0 ; i < rooms.length ; i++) { %>
+            <% surface = rooms[i].width*rooms[i].length%>
+            <% totalsurface += surface %> 
+            <label>Pièce : <%= rooms[i].name %> <%= surface %> m²</label><br>
+            <% } %>
+            <div class="line lastline">Surface totale : <%= totalsurface %> m²</div>
+        <button onclick="location.href='/'">Encoder une autre pièce</button>
+    </div>
+</body>
+</html>

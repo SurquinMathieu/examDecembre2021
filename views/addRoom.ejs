@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>examen</title>
+    <script>
+        function calculate(){
+            largeur = document.getElementById("largeur").value;
+            longueur = document.getElementById("longueur").value;
+            if(largeur == "" || longueur == ""){
+                window.alert('Veilleur remplir les champs requis !')
+            }else{
+                message = "Surface : " + largeur*longueur + " m²";
+                console.log(message);
+                document.getElementById("surface-result").innerHTML= message;
+                
+            }
+        }
+    </script>
+    <!--  <link rel="stylesheet" href="/css/styleConnection.css"/>  -->
+</head>
+<body>
+    <h1>Encoder les données de la pièce</h1>
+
+	<form action="/showRooms" method="POST">
+		<label>Nom : </label>
+		<input type="text" name="piece" required><br>
+        <br><label>Largeur : </label>
+		<input type="number" id="largeur" name="largeur" required><br>
+        <br><label>Longueur : </label>
+        <input type="number" id="longueur" name="longueur" required><br>
+        <input type="submit" name="save" value="Enregistrer">
+	</form>
+    <div id="surface">
+        <button onclick="calculate()" id="calc-button">Calculer la surface</button>
+        <p id="surface-result"></p>
+    </div>
+</body>
+</html>
